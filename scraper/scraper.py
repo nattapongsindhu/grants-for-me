@@ -15,7 +15,9 @@ Output: ../public/data/grants.json
 
 import json
 import logging
+import re
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -57,6 +59,13 @@ SOURCES = [
 ]
 
 
+def sanitize_text(text: str, max_length: int = 300) -> str:
+    """Strip HTML tags, normalize whitespace, and cap length."""
+    text = re.sub(r"<[^>]+>", "", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text[:max_length]
+
+
 def fetch(url: str) -> BeautifulSoup | None:
     try:
         resp = requests.get(url, headers=HEADERS, timeout=20)
@@ -84,7 +93,7 @@ def parse_per_scholas(soup: BeautifulSoup) -> dict | None:
         return None
     return {
         "id": "per-scholas-la",
-        "scrapedName": title_el.get_text(strip=True),
+        "scrapedName": sanitize_text(title_el.get_text(strip=True)),
         "lastScraped": datetime.now(timezone.utc).isoformat(),
     }
 
@@ -102,7 +111,7 @@ def parse_futuro_health(soup: BeautifulSoup) -> dict | None:
     name_el = card.select_one("h3, .program-title")
     return {
         "id": "futuro-health-rda",
-        "scrapedName": name_el.get_text(strip=True) if name_el else "Futuro Health Program",
+        "scrapedName": sanitize_text(name_el.get_text(strip=True)) if name_el else "Futuro Health Program",
         "lastScraped": datetime.now(timezone.utc).isoformat(),
     }
 
@@ -155,7 +164,9 @@ def run():
     existing = load_existing()
     scraped = []
 
-    for source in SOURCES:
+    for i, source in enumerate(SOURCES):
+        if i > 0:
+            time.sleep(2)  # rate limit: 2s between requests to avoid bans
         log.info("Fetching %s", source["url"])
         soup = fetch(source["url"])
         if soup is None:

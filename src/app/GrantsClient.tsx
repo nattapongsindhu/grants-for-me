@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import type { Grant, Category } from "@/types/grant";
 import GrantCard from "@/components/GrantCard";
 import SearchBar from "@/components/SearchBar";
@@ -14,6 +14,21 @@ interface Props {
 export default function GrantsClient({ grants, lastUpdated }: Props) {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<Category | null>(null);
+  const [formattedDate, setFormattedDate] = useState<string>("—");
+
+  useEffect(() => {
+    setFormattedDate(
+      new Date(lastUpdated).toLocaleString("en-US", {
+        timeZone: "America/Los_Angeles",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZoneName: "short",
+      })
+    );
+  }, [lastUpdated]);
 
   const filtered = useMemo(() => {
     const q = query.toLowerCase().trim();
@@ -42,24 +57,17 @@ export default function GrantsClient({ grants, lastUpdated }: Props) {
           </p>
           <p className="mt-1 text-sm text-gray-500 font-medium">
             Last Updated:{" "}
-            <span className="text-gray-700">
-              {new Date(lastUpdated).toLocaleString("en-US", {
-                timeZone: "America/Los_Angeles",
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-                timeZoneName: "short",
-              })}
-            </span>
+            <span className="text-gray-700">{formattedDate}</span>
           </p>
         </header>
 
-        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-center">
           <SearchBar value={query} onChange={setQuery} />
           <FilterCategory active={activeCategory} onChange={setActiveCategory} />
         </div>
+        <p className="mb-6 text-xs text-gray-400">
+          Showing {filtered.length} of {grants.length} grants
+        </p>
 
         {filtered.length === 0 ? (
           <p className="text-center text-gray-500 mt-16">

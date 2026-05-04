@@ -14,7 +14,7 @@ export default function FilterCategory({ active, onChange }: Props) {
     <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
       <button
         onClick={() => onChange(null)}
-        className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+        className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 ${
           active === null
             ? "bg-blue-600 text-white"
             : "bg-gray-100 text-gray-700 hover:bg-gray-200"

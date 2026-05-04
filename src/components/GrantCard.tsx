@@ -6,6 +6,22 @@ const IMPACT_BADGE: Record<ImpactLevel, string> = {
   low: "bg-gray-100 text-gray-700",
 };
 
+const IMPACT_LABEL: Record<ImpactLevel, string> = {
+  high: "Recommended",
+  medium: "Available",
+  low: "Institutional",
+};
+
+function isSafeUrl(url: string | undefined): url is string {
+  if (!url) return false;
+  try {
+    const { protocol } = new URL(url);
+    return protocol === "https:" || protocol === "http:";
+  } catch {
+    return false;
+  }
+}
+
 interface Props {
   grant: Grant;
 }
@@ -18,9 +34,9 @@ export default function GrantCard({ grant }: Props) {
           {grant.name}
         </h2>
         <span
-          className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium capitalize ${IMPACT_BADGE[grant.impact]}`}
+          className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${IMPACT_BADGE[grant.impact]}`}
         >
-          {grant.impact} impact
+          {IMPACT_LABEL[grant.impact]}
         </span>
       </header>
 
@@ -54,12 +70,12 @@ export default function GrantCard({ grant }: Props) {
         <span className="text-xs text-gray-400">
           Verified {grant.lastVerified} · {grant.region}
         </span>
-        {grant.sourceUrl && (
+        {isSafeUrl(grant.sourceUrl) && (
           <a
             href={grant.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-blue-600 hover:underline"
+            className="inline-block rounded-lg bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-blue-700 active:bg-blue-800 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             Visit site →
           </a>
