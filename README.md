@@ -1,4 +1,4 @@
-# 🎓 Grants for Me: Free CA Workforce Training Grants
+# 🎓 Grants for Me: Free CA Workforce Training Programs
 
 [![Deploy with Vercel](https://vercelbadge.vercel.app/api/nattapongsindhu/grants-for-me)](https://grants-for-me.vercel.app)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
