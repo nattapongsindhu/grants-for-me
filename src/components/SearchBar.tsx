@@ -24,7 +24,7 @@ export default function SearchBar({ value, onChange }: Props) {
         placeholder="Search grants by name, category, or keyword..."
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-xl border border-gray-300 bg-white py-2.5 pl-10 pr-4 text-sm shadow-sm outline-none placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+        className="w-full rounded-xl border border-gray-300 bg-white py-2.5 pl-10 pr-4 text-sm shadow-sm outline-none placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 focus-visible:ring-2 focus-visible:ring-blue-400"
         aria-label="Search grants"
       />
     </div>
