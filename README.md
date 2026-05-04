@@ -1,6 +1,40 @@
-# Grants For Me
+# 🎓 Grants for Me: Free CA Workforce Training Grants
 
-A static web application that aggregates free California workforce training grants for IT, Cybersecurity, Maintenance, and Healthcare fields. Built to demonstrate product sense, data reliability, and accessible UI architecture.
+[![Deploy with Vercel](https://vercelbadge.vercel.app/api/nattapongsindhu/grants-for-me)](https://grants-for-me.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Python Scraper](https://img.shields.io/badge/Python-Data_Pipeline-ffd343?logo=python&logoColor=blue)](https://python.org)
+[![Automated Scraper](https://github.com/nattapongsindhu/grants-for-me/actions/workflows/scraper.yml/badge.svg)](https://github.com/nattapongsindhu/grants-for-me/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+A minimal, highly performant grant discovery web application focused on free workforce training opportunities in California (IT, Maintenance, and Healthcare).
+
+Live Demo: [grants-for-me.vercel.app](https://grants-for-me.vercel.app)
+
+---
+
+## 📌 Project Purpose
+Navigating government and institutional training grants can be overwhelming. This project solves that by aggregating high-impact, fully-funded programs (like WIOA, Futuro Health, and Per Scholas) into a single, easily filterable dashboard. 
+
+Built as a portfolio piece to demonstrate **product sense, automated data pipelines, accessibility (a11y), and maintainable architecture**.
+
+## 🏗️ Architecture & Tech Stack
+- **Frontend:** Next.js (App Router), TypeScript, Tailwind CSS.
+- **Backend / Data Pipeline:** Python (BeautifulSoup, Requests) for web scraping.
+- **Automation:** GitHub Actions (Cron jobs running twice daily at 06:00 AM and 06:00 PM LA Time).
+- **Deployment & Hosting:** Vercel (Frontend), GitHub (Data Storage via JSON).
+
+## ⚙️ Data Pipeline Reliability
+1. **Automated Scraping:** A Python script runs via GitHub Actions, fetching the latest eligibility and coverage details.
+2. **Data Trust Layer:** Each grant includes a `lastUpdated` timestamp and an official source link. 
+3. **Stale-Data Handling:** The UI flags data if it becomes outdated, ensuring user trust.
+
+## 🚀 Local Development Setup
+
+### 1. Clone the repository
+```bash
+git clone [https://github.com/nattapongsindhu/grants-for-me.git](https://github.com/nattapongsindhu/grants-for-me.git)
+cd grants-for-me
 
 **Live site:** [grants-for-me.vercel.app](https://grants-for-me.vercel.app)
 
