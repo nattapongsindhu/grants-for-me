@@ -1,0 +1,110 @@
+{
+  "lastUpdated": "2026-05-04",
+  "version": "1.0.0",
+  "grants": [
+    {
+      "id": "wioa-ajcc-caljobs",
+      "name": "WIOA via AJCC / CalJOBS",
+      "categories": ["IT/Cybersecurity", "Maintenance", "Healthcare"],
+      "eligibility": "Job seeker needing career planning or training. Local AJCC determines eligibility.",
+      "coverage": "Career advice, job search help, and local AJCC training services at no cost. Tuition, books, tests, and tools may be funded.",
+      "action": "Create a CalJOBS account, then visit your local AJCC for WIOA screening.",
+      "sourceUrl": "https://www.caljobs.ca.gov",
+      "impact": "high",
+      "region": "California",
+      "tags": ["WIOA", "AJCC", "IT", "Cybersecurity", "Maintenance", "Healthcare", "no-cost", "training-funds"],
+      "lastVerified": "2026-05-04"
+    },
+    {
+      "id": "per-scholas-la",
+      "name": "Per Scholas Los Angeles",
+      "categories": ["IT/Cybersecurity"],
+      "eligibility": "Los Angeles County resident. All experience levels accepted.",
+      "coverage": "No-cost training. CompTIA A+ and Google IT Support Professional Certificate included.",
+      "action": "Apply via the Per Scholas Los Angeles course page.",
+      "sourceUrl": "https://perscholas.org/locations/los-angeles/",
+      "impact": "high",
+      "region": "Los Angeles County",
+      "tags": ["IT", "CompTIA A+", "Google IT", "no-cost", "entry-level", "Los Angeles"],
+      "lastVerified": "2026-05-04"
+    },
+    {
+      "id": "futuro-health-rda",
+      "name": "Futuro Health — Registered Dental Assistant",
+      "categories": ["Healthcare"],
+      "eligibility": "CA resident, US work authorization, high school diploma or GED, PC and internet access, availability of 20+ hours/week.",
+      "coverage": "Tuition-free program leading to State Board Examination for Registered Dental Assistant.",
+      "action": "Create an account at the Futuro Health catalog and check regional availability.",
+      "sourceUrl": "https://www.futurohealth.org",
+      "impact": "high",
+      "region": "California",
+      "tags": ["Healthcare", "Dental", "RDA", "tuition-free", "State Board", "Futuro Health"],
+      "lastVerified": "2026-05-04"
+    },
+    {
+      "id": "dental-assistant-apprenticeship-ca",
+      "name": "Dental Assistant Apprenticeship — CA Apprenticeship / Local COE",
+      "categories": ["Healthcare"],
+      "eligibility": "Varies by program (e.g., Butte County CTE, Santa Cruz COE).",
+      "coverage": "No-cost program with paid on-the-job training. Prepares for State Board / RDA credential.",
+      "action": "Search CA DIR apprenticeship listings for 'Dental Assistant'.",
+      "sourceUrl": "https://www.dir.ca.gov/databases/das/aigstart.asp",
+      "impact": "high",
+      "region": "California",
+      "tags": ["Healthcare", "Dental", "Apprenticeship", "paid OJT", "no-cost", "RDA", "CA DIR"],
+      "lastVerified": "2026-05-04"
+    },
+    {
+      "id": "county-workforce-programs",
+      "name": "County Workforce Programs",
+      "categories": ["IT/Cybersecurity", "Maintenance", "Healthcare"],
+      "eligibility": "Unemployed or underemployed residents. Geographic rules vary by county.",
+      "coverage": "Training at no cost. Programs include auto mechanic, electrician, and micro-computer repair.",
+      "action": "Contact your nearest AJCC for Adult or Dislocated Worker screening.",
+      "sourceUrl": "https://edd.ca.gov/en/jobs_and_training/ajcc/",
+      "impact": "medium",
+      "region": "California",
+      "tags": ["IT", "Maintenance", "Healthcare", "AJCC", "no-cost", "county", "unemployed", "dislocated worker"],
+      "lastVerified": "2026-05-04"
+    },
+    {
+      "id": "maintenance-mechanic-apprenticeship",
+      "name": "Maintenance Mechanic / Industrial Mechanic Apprenticeships",
+      "categories": ["Maintenance"],
+      "eligibility": "Registered apprenticeship rules apply (e.g., Chaffey College InTech Center). Employer sponsorship may be required.",
+      "coverage": "Paid on-the-job training combined with classroom instruction.",
+      "action": "Review the Chaffey College InTech page for Industrial Mechanic openings.",
+      "sourceUrl": "https://www.chaffey.edu/intech/",
+      "impact": "medium",
+      "region": "California",
+      "tags": ["Maintenance", "Mechanic", "Industrial", "Apprenticeship", "paid OJT", "Chaffey College"],
+      "lastVerified": "2026-05-04"
+    },
+    {
+      "id": "hospital-paid-training",
+      "name": "Hospital / Health Center Paid Training",
+      "categories": ["Healthcare"],
+      "eligibility": "Cohort-based enrollment (up to 30 seats for CCALAC programs).",
+      "coverage": "CCALAC: 110-hour paid internship with $1,500 stipend. Propel America: tuition-free Medical Assistant training.",
+      "action": "Apply to CCALAC or Propel America based on current cohort availability.",
+      "sourceUrl": "https://ccalac.org",
+      "impact": "medium",
+      "region": "Los Angeles County",
+      "tags": ["Healthcare", "Medical Assistant", "paid internship", "stipend", "CCALAC", "Propel America"],
+      "lastVerified": "2026-05-04"
+    },
+    {
+      "id": "ca-cybersecurity-ramps",
+      "name": "California Cybersecurity Workforce Grants (RAMPS)",
+      "categories": ["IT/Cybersecurity"],
+      "eligibility": "Institutional funding (partnerships and schools). Not a direct-to-student grant.",
+      "coverage": "Funds local cybersecurity workforce pipelines through partner institutions.",
+      "action": "Ask your local AJCC if they are connected to any RAMPS-funded partners.",
+      "sourceUrl": "https://www.cde.ca.gov/ci/ct/gi/ramps.asp",
+      "impact": "low",
+      "region": "California",
+      "tags": ["Cybersecurity", "RAMPS", "institutional", "pipeline", "AJCC"],
+      "lastVerified": "2026-05-04"
+    }
+  ]
+}

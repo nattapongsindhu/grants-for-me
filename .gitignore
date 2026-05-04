@@ -1,0 +1,26 @@
+# Next.js
+.next/
+out/
+node_modules/
+
+# Build
+dist/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Python
+scraper/__pycache__/
+scraper/*.pyc
+scraper/.venv/
+scraper/venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
