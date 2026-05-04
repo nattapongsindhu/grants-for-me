@@ -40,7 +40,20 @@ export default function GrantsClient({ grants, lastUpdated }: Props) {
           <p className="mt-2 text-gray-600">
             California grants for IT, Maintenance, and Healthcare training — no cost to you.
           </p>
-          <p className="mt-1 text-xs text-gray-400">Data updated {lastUpdated}</p>
+          <p className="mt-1 text-sm text-gray-500 font-medium">
+            Last Updated:{" "}
+            <span className="text-gray-700">
+              {new Date(lastUpdated).toLocaleString("en-US", {
+                timeZone: "America/Los_Angeles",
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                timeZoneName: "short",
+              })}
+            </span>
+          </p>
         </header>
 
         <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">

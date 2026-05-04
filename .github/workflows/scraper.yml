@@ -1,9 +1,11 @@
-name: Weekly Grant Scraper
+name: Twice-Daily Grant Scraper
 
 on:
   schedule:
-    # Every Sunday at 06:00 UTC (11pm Saturday PT)
-    - cron: "0 6 * * 0"
+    # 06:00 AM LA time = 13:00 UTC (PDT, UTC-7) | 14:00 UTC (PST, UTC-8)
+    - cron: "0 13 * * *"
+    # 06:00 PM LA time = 01:00 UTC next day (PDT) | 02:00 UTC (PST)
+    - cron: "0 1 * * *"
   workflow_dispatch: # allow manual trigger from GitHub UI
 
 permissions:

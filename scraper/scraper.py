@@ -16,7 +16,7 @@ Output: ../public/data/grants.json
 import json
 import logging
 import sys
-from datetime import date
+from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
@@ -85,7 +85,7 @@ def parse_per_scholas(soup: BeautifulSoup) -> dict | None:
     return {
         "id": "per-scholas-la",
         "scrapedName": title_el.get_text(strip=True),
-        "lastScraped": str(date.today()),
+        "lastScraped": datetime.now(timezone.utc).isoformat(),
     }
 
 
@@ -103,7 +103,7 @@ def parse_futuro_health(soup: BeautifulSoup) -> dict | None:
     return {
         "id": "futuro-health-rda",
         "scrapedName": name_el.get_text(strip=True) if name_el else "Futuro Health Program",
-        "lastScraped": str(date.today()),
+        "lastScraped": datetime.now(timezone.utc).isoformat(),
     }
 
 
@@ -117,7 +117,7 @@ def parse_ca_dir_apprenticeship(soup: BeautifulSoup) -> dict | None:
     return {
         "id": "dental-assistant-apprenticeship-ca",
         "scrapedName": "Dental Assistant Apprenticeship (CA DIR)",
-        "lastScraped": str(date.today()),
+        "lastScraped": datetime.now(timezone.utc).isoformat(),
     }
 
 
@@ -146,7 +146,7 @@ def merge_scraped(existing: dict, scraped_updates: list[dict]) -> dict:
         if grant["id"] in update_map:
             update = update_map[grant["id"]]
             grant["lastVerified"] = update.get("lastScraped", grant["lastVerified"])
-    existing["lastUpdated"] = str(date.today())
+    existing["lastUpdated"] = datetime.now(timezone.utc).isoformat()
     return existing
 
 
