@@ -18,33 +18,6 @@ Navigating government and institutional training grants can be overwhelming. Thi
 
 Built as a portfolio piece to demonstrate **product sense, automated data pipelines, accessibility (a11y), and maintainable architecture**.
 
-## 🏗️ Architecture & Tech Stack
-- **Frontend:** Next.js (App Router), TypeScript, Tailwind CSS.
-- **Backend / Data Pipeline:** Python (BeautifulSoup, Requests) for web scraping.
-- **Automation:** GitHub Actions (Cron jobs running twice daily at 06:00 AM and 06:00 PM LA Time).
-- **Deployment & Hosting:** Vercel (Frontend), GitHub (Data Storage via JSON).
-
-## ⚙️ Data Pipeline Reliability
-1. **Automated Scraping:** A Python script runs via GitHub Actions, fetching the latest eligibility and coverage details.
-2. **Data Trust Layer:** Each grant includes a `lastUpdated` timestamp and an official source link. 
-3. **Stale-Data Handling:** The UI flags data if it becomes outdated, ensuring user trust.
-
-## 🚀 Local Development Setup
-
-### 1. Clone the repository
-```bash
-git clone [https://github.com/nattapongsindhu/grants-for-me.git](https://github.com/nattapongsindhu/grants-for-me.git)
-cd grants-for-me
-
-**Live site:** [grants-for-me.vercel.app](https://grants-for-me.vercel.app)
-
----
-
-## Project Purpose
-
-Finding free workforce training in California requires searching across dozens of disconnected government, county, and nonprofit websites. This project solves that by aggregating verified grant listings into a single searchable interface — updated automatically twice per day.
-
-Target users: job seekers and career changers in Los Angeles and California who need no-cost training for entry-level IT, healthcare, or maintenance roles.
 
 ---
 
