@@ -16,9 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
+        # TODO: Update to actions/checkout@v5 (Node.js 22) when released.
+        # actions/checkout@v4 runs on Node.js 20 — causes a deprecation warning
+        # once GitHub enforces the Node.js 22 requirement. No functional impact yet.
         uses: actions/checkout@v4
 
       - name: Set up Python
+        # TODO: Update to actions/setup-python@v6 (Node.js 22) when released.
+        # actions/setup-python@v5 runs on Node.js 20 — same deprecation warning as above.
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
