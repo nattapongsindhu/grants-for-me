@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import type { Grant, Category } from "@/types/grant";
 import GrantCard from "@/components/GrantCard";
@@ -29,11 +29,9 @@ export default function GrantsClient({ grants, lastUpdated }: Props) {
   const [activeCategory, setActiveCategoryState] = useState<Category | null>(
     () => (searchParams.get("category") as Category | null) ?? null
   );
-  const [formattedDate, setFormattedDate] = useState<string>("—");
   const isStale = useMemo(() => isStaleData(lastUpdated), [lastUpdated]);
-
-  useEffect(() => {
-    setFormattedDate(
+  const formattedDate = useMemo(
+    () =>
       new Date(lastUpdated).toLocaleString("en-US", {
         timeZone: "America/Los_Angeles",
         year: "numeric",
@@ -42,9 +40,9 @@ export default function GrantsClient({ grants, lastUpdated }: Props) {
         hour: "2-digit",
         minute: "2-digit",
         timeZoneName: "short",
-      })
-    );
-  }, [lastUpdated]);
+      }),
+    [lastUpdated]
+  );
 
   const updateUrl = useCallback(
     (newQuery: string, newCategory: Category | null) => {
